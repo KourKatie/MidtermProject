@@ -33,6 +33,6 @@ public class CheckedBook extends Book {
 
     @Override
     public String toString() {
-        return status + dueDate;
+        return super.toString() + status + dueDate;
     }
 }
