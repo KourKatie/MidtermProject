@@ -22,7 +22,20 @@ public class BookApp {
         ArrayList<Book> books = new ArrayList<Book>();
 
         //add books to ArrayList
-        Book.add(new books(Title, Author));
+        books.add(new Book("The Alechemist", "Paulo Coelho"));
+        books.add(new Book ("Richest Man in Babylon", "George Samuel Clayson"));
+        books.add(new Book ("48 Laws of Power", "Robert Greene"));
+        books.add(new Book("The Art of War", "Sun Tsu"));
+        books.add(new Book("Harry Potter and the Sorcerer's Stone", "J.K. Rowling"));
+        books.add(new Book("Hunger Games", "Suzanne Collins"));
+        books.add(new Book("Awakening Your Inner Genius", "Sean Patrick"));
+        books.add(new Book("Of Mice of Men", "John Steinbeck"));
+        books.add(new Book("The Great Gatsby", "F. Scott Fitzgerald"));
+        books.add(new Book("A Clockwork Orange", "Anthony Burgess"));
+        books.add(new Book("Invisible Man", "Ralph Ellison"));
+        books.add(new Book("Frankenstein", "Mary Shelley"));
+        books.add(new Book("The AutoBiography of Malcolm X", "Alvin Hailey"));
+
 
 //    private static void BookListing() {
 //        File myFile = new File("booklist.txt");
