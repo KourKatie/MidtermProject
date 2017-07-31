@@ -19,24 +19,26 @@ public class BookApp {
 
         //String fileOuput = readfile();
 
-        //ArrayList<Book> books = new ArrayList<Book>();
+        ArrayList<Book> books = new ArrayList<Book>();
 
-    private static void BookListing() {
-        File myFile = new File("booklist.txt");
-    }
+        Book.add(new books(Title, Author, etc.));
 
-    private static void writeToFile(File myFile) {
-        try {
-            PrintWriter bookData = new PrintWriter(new FileOutputStream(myFile, true));
+//    private static void BookListing() {
+//        File myFile = new File("booklist.txt");
+//    }
 
-            bookData.println(FIXME);
-            bookData.close();
-
-        } catch (FileNotFoundException e) {
-            System.out.println("Sorry, that file was not found.");
-        }
-
-    }
+//    private static void writeToFile(File myFile) {
+//        try {
+//            PrintWriter bookData = new PrintWriter(new FileOutputStream(myFile, true));
+//
+//            bookData.println(FIXME);
+//            bookData.close();
+//
+//        } catch (FileNotFoundException e) {
+//            System.out.println("Sorry, that file was not found.");
+//        }
+//
+//    }
 
     private static String readFile() {
         File myFile = new File("booklist.txt");
@@ -59,17 +61,10 @@ public class BookApp {
         return FIXME;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-    }
-
 }
+
+
+
+
+
+
