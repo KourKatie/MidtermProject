@@ -21,7 +21,8 @@ public class BookApp {
 
         ArrayList<Book> books = new ArrayList<Book>();
 
-        Book.add(new books(Title, Author, etc.));
+        //add books to ArrayList
+        Book.add(new books(Title, Author));
 
 //    private static void BookListing() {
 //        File myFile = new File("booklist.txt");
