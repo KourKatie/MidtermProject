@@ -55,69 +55,51 @@ public class BookApp {
 
 
         int choice = 0;
+        int reset = 0;
 
         System.out.println("Welcome to Stanton Island's Public Library!");
-        System.out.println("Main Menu");
-        System.out.println("1 - Library Directory");
-        System.out.println("2 - Search");
-        System.out.println("3 - Return Book");
-        System.out.print("Enter menu number: ");
-        choice = scnr.nextInt();
-        scnr.nextLine();
 
-        switch (choice) {
-            case 1:
-                System.out.println("Library Directory");
-                break;
-            case 2:
-                System.out.println("Search");
-                break;
-            case 3:
-                System.out.println("Return Book");
-                break;
-        }
+        do {
+            System.out.println("Main Menu");
+            System.out.println("1 - Library Directory");
+            System.out.println("2 - Search");
+            System.out.println("3 - Return Book");
+            System.out.print("Enter menu number: ");
+            choice = scnr.nextInt();
+            scnr.nextLine();
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Library Directory");
+                    break;
+                case 2:
+                    System.out.println("Search");
+                    break;
+                case 3:
+                    for (int i = 0; i < books.size(); i++) {
+                        System.out.println(books.get(i));
+                    }
+                    System.out.println("\n");
+                    System.out.print("Select book to return by ID: ");
+                    int returnID = scnr.nextInt();
+
+                    //Change status of book to Checked In, Change due date back to 0
+
+                    System.out.println("Your book has been returned. Thank you!\n");
+                    System.out.println("1 - Main Menu");
+                    System.out.println("2 - Exit");
+                    reset = scnr.nextInt();
+                    if (reset == 1) {
+                    } else {
+                        break;
+                    }
+            }
+        } while (reset == 1);
 
         // Method call to get due date 14 days (2 weeks) from current date.
         Book.dueDateMethod();
 
 
-//    private static void BookListing() {
-//        File myFile = new File("booklist.txt");
-//    }
-
-//    private static void writeToFile(File myFile) {
-//        try {
-//            PrintWriter bookData = new PrintWriter(new FileOutputStream(myFile, true));
-//
-//            bookData.println(FIXME);
-//            bookData.close();
-//
-//        } catch (FileNotFoundException e) {
-//            System.out.println("Sorry, that file was not found.");
-//        }
-//
-//    }
-
-//    private static String readFile() {
-//        File myFile = new File("booklist.txt");
-//        String output = "";
-//
-//        try {
-//            FileReader reader = new FileReader(myFile);
-//            BufferedReader bufferRead = new BufferedReader(reader);
-//            String line = bufferRead.readLine();
-//            while (line != null) {
-//                output = output + line + "\n";
-//                line = bufferRead.readLine();
-//
-//            }
-//            bufferRead.close();
-//        } catch (Exception e) {
-//            System.out.println("Sorry, that file was not found.");
-//        }
-//
-//        return FIXME;
-//    }
 
     }
 }
