@@ -21,24 +21,42 @@ public class BookApp {
         ArrayList<Book> books = new ArrayList<Book>();
 
         //add books to ArrayList
-        books.add(new Book("The Alechemist", "Paulo Coelho"));
-        books.add(new Book ("Richest Man in Babylon", "George Samuel Clayson"));
-        books.add(new Book ("48 Laws of Power", "Robert Greene"));
-        books.add(new Book("The Art of War", "Sun Tsu"));
-        books.add(new Book("Harry Potter and the Sorcerer's Stone", "J.K. Rowling"));
-        books.add(new Book("Hunger Games", "Suzanne Collins"));
-        books.add(new Book("Awakening Your Inner Genius", "Sean Patrick"));
-        books.add(new Book("Of Mice of Men", "John Steinbeck"));
-        books.add(new Book("The Great Gatsby", "F. Scott Fitzgerald"));
-        books.add(new Book("A Clockwork Orange", "Anthony Burgess"));
-        books.add(new Book("Invisible Man", "Ralph Ellison"));
-        books.add(new Book("Frankenstein", "Mary Shelley"));
-        books.add(new Book("The AutoBiography of Malcolm X", "Alvin Hailey"));
 
 
- //   public String Book() {
+        books.add(new Book(101, "The Alchemist", "Paulo Coelho", 208,
+                "November 23, 2010", "On-Shelf", 0));
+        books.add(new Book(102, "Richest Man in Babylon", "George Samuel Clayson", 144,
+                "January 1, 2002", "On-Shelf", 0));
+        books.add(new Book(103, "48 Laws of Power", "Robert Greene", 452,
+                "September 1, 2000", "On-Shelf", 0));
+        books.add(new Book(104, "The Art of War", "Sun Tsu", 452,
+                "November 7, 2007", "On-Shelf", 0));
+        books.add(new Book(105, "Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 309,
+                "September 1998", "On-Shelf", 0));
+        books.add(new Book(106, "Hunger Games", "Suzanne Collins", 384,
+                "July 3, 2010", "On-Shelf", 0));
+        books.add(new Book(107, "Awakening Your Inner Genius", "Sean Patrick", 214,
+                "February 12, 2013", "On-Shelf", 0));
+        books.add(new Book(108, "Of Mice of Men", "John Steinbeck", 112,
+                "September 1, 1993", "On-Shelf", 0));
+        books.add(new Book(109, "The Great Gatsby", "F. Scott Fitzgerald", 180,
+                "September 30, 2004", "On-Shelf", 0));
+        books.add(new Book(110, "A Clockwork Orange", "Anthony Burgess", 213,
+                "April 7, 1995", "On-Shelf", 0));
+        books.add(new Book(111, "Invisible Man", "Ralph Ellison", 581,
+                "March 14, 1995", "On-Shelf", 0));
+        books.add(new Book(112, "Frankenstein", "Mary Shelley", 166,
+                "1994", "On-Shelf", 0));
+        books.add(new Book(113, "The AutoBiography of Malcolm X", "Alvin Hailey", 460,
+                "November 1992", "On-Shelf", 0));
+
+        for (int i = 0; i < books.size(); i++) {
+            System.out.println(books.get(i));
+        }
+
+
         int choice = 0;
-        switch(choice) {
+        switch (choice) {
             case 1:
                 System.out.println("Library Directory");
                 break;
@@ -50,11 +68,8 @@ public class BookApp {
                 break;
         }
 
-
-
-
-    // Method call to get due date 14 days (2 weeks) from current date.
-        CheckedBook.dueDateMethod();
+        // Method call to get due date 14 days (2 weeks) from current date.
+        Book.dueDateMethod();
 
 //    private static void BookListing() {
 //        File myFile = new File("booklist.txt");
@@ -73,25 +88,26 @@ public class BookApp {
 //
 //    }
 
-    private static String readFile() {
-        File myFile = new File("booklist.txt");
-        String output = "";
-
-        try {
-            FileReader reader = new FileReader(myFile);
-            BufferedReader bufferRead = new BufferedReader(reader);
-            String line = bufferRead.readLine();
-            while (line != null) {
-                output = output + line + "\n";
-                line = bufferRead.readLine();
-
-            }
-            bufferRead.close();
-        } catch (Exception e) {
-            System.out.println("Sorry, that file was not found.");
-        }
-
-        return FIXME;
+//    private static String readFile() {
+//        File myFile = new File("booklist.txt");
+//        String output = "";
+//
+//        try {
+//            FileReader reader = new FileReader(myFile);
+//            BufferedReader bufferRead = new BufferedReader(reader);
+//            String line = bufferRead.readLine();
+//            while (line != null) {
+//                output = output + line + "\n";
+//                line = bufferRead.readLine();
+//
+//            }
+//            bufferRead.close();
+//        } catch (Exception e) {
+//            System.out.println("Sorry, that file was not found.");
+//        }
+//
+//        return FIXME;
+//    }
     }
 }
 
