@@ -73,9 +73,7 @@ public class BookApp {
                     System.out.println("\nPlease enter the book ID for the book you would like to checkout: ");
                     int selection = scnr.nextInt();
                     selection = selection - 101;
-                    //if (selection == (i)) {
-                    //  System.out.println("You selected to check out Book ID " + books.get(selection));
-                    // }
+
                     System.out.println("Congratulations you just checked out " +  "'" + books.get(selection).getTitle()
                             + "'" + "," + " it is due " + Book.dueDateMethod() + ".");
 
