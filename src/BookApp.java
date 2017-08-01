@@ -38,7 +38,7 @@ public class BookApp {
         books.add(new Book("The AutoBiography of Malcolm X", "Alvin Hailey"));
 
         // Method call to get due date 14 days (2 weeks) from current date.
-        CheckedBook.dueDateMethod();
+        Book.dueDateMethod();
 
 //    private static void BookListing() {
 //        File myFile = new File("booklist.txt");
