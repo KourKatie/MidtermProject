@@ -1,3 +1,4 @@
+import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -11,7 +12,7 @@ public class Book {
     private int numberOfPages;
     private String publicationDate;
     private String status;
-    private int dueDate;
+    private Date dueDate;
 
     // Default constructor
     public Book() {
@@ -21,7 +22,7 @@ public class Book {
         this.numberOfPages = 0;
         this.publicationDate = "";
         this.status = "";
-        this.dueDate = 0;
+        this.dueDate = null;
     }
 
     // All arguments constructor
@@ -35,7 +36,7 @@ public class Book {
         this.numberOfPages = numberOfPages;
         this.publicationDate = publicationDate;
         this.status = status;
-        this.dueDate = dueDate;
+        this.dueDate = null;
     }
 
     public int getBookID() {
@@ -86,11 +87,11 @@ public class Book {
         this.status = status;
     }
 
-    public int getDueDate() {
+    public Date getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(int dueDate) {
+    public void setDueDate(Date dueDate) {
         this.dueDate = dueDate;
     }
 
@@ -100,7 +101,7 @@ public class Book {
                     + " " + publicationDate + " " + status + " " + dueDate;
     }
     // Method to get due date 14 days (2 weeks) from current date.
-    public static void dueDateMethod() {
+    public static Date dueDateMethod() {
         Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
         // Set seconds, minutes and hours to zero so the time will be a constant
@@ -108,7 +109,9 @@ public class Book {
         cal.set(Calendar.MINUTE, 0);
         cal.set(Calendar.HOUR, 0);
         cal.add(Calendar.DAY_OF_WEEK, 14);
-        System.out.println((cal.getTime()));
+       // System.out.println((cal.getTime()));
+        return cal.getTime();
+
     }
 }
 

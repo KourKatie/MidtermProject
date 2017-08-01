@@ -2,6 +2,8 @@
  * Created by Katie on 7/31/2017.
  */
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.File;
@@ -48,11 +50,6 @@ public class BookApp {
         books.add(new Book(113, "The AutoBiography of Malcolm X", "Alvin Hailey", 460,
                 "November 1992", "On-Shelf", 0));
 
-//        for (int i = 0; i < books.size(); i++) {
-//            System.out.println(books.get(i));
-//        }
-
-
         int choice = 0;
 
         System.out.println("Welcome to Stanton Island's Public Library!");
@@ -64,10 +61,41 @@ public class BookApp {
         choice = scnr.nextInt();
         scnr.nextLine();
 
+        int i = 0;
         switch (choice) {
             case 1:
                 System.out.println("Library Directory");
+                for (i = 0; i < books.size(); i++) {
+                    System.out.println(books.get(i));
+                }
+                System.out.println("\nPlease enter the book ID for the book you would like to checkout: ");
+                int selection = scnr.nextInt();
+                selection = selection - 101;
+                //if (selection == (i)) {
+                  //  System.out.println("You selected to check out Book ID " + books.get(selection));
+               // }
+               System.out.println("Congratulations you just checked out " +  "'" + books.get(selection).getTitle()
+                       + "'" + "," + " it is due " + Book.dueDateMethod() + ".");
+
+               // Updates status and adds a due date to selected book ID
+                for (i = 0; i < books.size(); i++){
+                    Date dueDate = Book.dueDateMethod();
+                    books.set(selection, books.get(selection)).setDueDate(dueDate);
+                    books.get(selection).setStatus("Checked Out");
+                }
+
+              // for (i = 0; i == selection; i++){
+                  // String status = "Checked Out";
+                   // books.set(selection, books.get(selection).setStatus(status));
+                //}
+
+
+                for (i = 0; i < books.size(); i++) {
+                    System.out.println(books.get(i));
+                }
+
                 break;
+
             case 2:
                 System.out.println("Search");
                 break;
@@ -75,9 +103,6 @@ public class BookApp {
                 System.out.println("Return Book");
                 break;
         }
-
-        // Method call to get due date 14 days (2 weeks) from current date.
-        Book.dueDateMethod();
 
 
 //    private static void BookListing() {
