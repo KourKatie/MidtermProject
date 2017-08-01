@@ -22,8 +22,6 @@ public class BookApp {
         ArrayList<Book> books = new ArrayList<Book>();
         //add books to ArrayList
 
-
-
         books.add(new Book(101, "The Alchemist", "Paulo Coelho", 208,
                 "November 23, 2010", "On-Shelf", 0));
         books.add(new Book(102, "Richest Man in Babylon", "George Samuel Clayson", 144,
@@ -55,59 +53,6 @@ public class BookApp {
         int reset = 0;
 
         System.out.println("Welcome to Stanton Island's Public Library!");
-<<<<<<< HEAD
-        System.out.println("Main Menu");
-        System.out.println("1 - Library Directory");
-        System.out.println("2 - Search");
-        System.out.println("3 - Return Book");
-        System.out.print("Enter menu number: ");
-        choice = scnr.nextInt();
-        scnr.nextLine();
-
-        int i = 0;
-        switch (choice) {
-            case 1:
-                System.out.println("Library Directory");
-                for (i = 0; i < books.size(); i++) {
-                    System.out.println(books.get(i));
-                }
-                System.out.println("\nPlease enter the book ID for the book you would like to checkout: ");
-                int selection = scnr.nextInt();
-                selection = selection - 101;
-                //if (selection == (i)) {
-                  //  System.out.println("You selected to check out Book ID " + books.get(selection));
-               // }
-               System.out.println("Congratulations you just checked out " +  "'" + books.get(selection).getTitle()
-                       + "'" + "," + " it is due " + Book.dueDateMethod() + ".");
-
-               // Updates status and adds a due date to selected book ID
-                for (i = 0; i < books.size(); i++){
-                    Date dueDate = Book.dueDateMethod();
-                    books.set(selection, books.get(selection)).setDueDate(dueDate);
-                    books.get(selection).setStatus("Checked Out");
-                }
-
-              // for (i = 0; i == selection; i++){
-                  // String status = "Checked Out";
-                   // books.set(selection, books.get(selection).setStatus(status));
-                //}
-
-
-                for (i = 0; i < books.size(); i++) {
-                    System.out.println(books.get(i));
-                }
-
-                break;
-
-            case 2:
-                System.out.println("Search");
-                break;
-            case 3:
-                System.out.println("Return Book");
-                break;
-        }
-
-=======
 
         do {
             System.out.println("Main Menu");
@@ -118,15 +63,44 @@ public class BookApp {
             choice = scnr.nextInt();
             scnr.nextLine();
 
+            int i;
             switch (choice) {
                 case 1:
                     System.out.println("Library Directory");
+                    for (i = 0; i < books.size(); i++) {
+                        System.out.println(books.get(i));
+                    }
+                    System.out.println("\nPlease enter the book ID for the book you would like to checkout: ");
+                    int selection = scnr.nextInt();
+                    selection = selection - 101;
+                    //if (selection == (i)) {
+                    //  System.out.println("You selected to check out Book ID " + books.get(selection));
+                    // }
+                    System.out.println("Congratulations you just checked out " +  "'" + books.get(selection).getTitle()
+                            + "'" + "," + " it is due " + Book.dueDateMethod() + ".");
+
+                    // Updates status and adds a due date to selected book ID
+                    for (i = 0; i < books.size(); i++){
+                        Date dueDate = Book.dueDateMethod();
+                        books.set(selection, books.get(selection)).setDueDate(dueDate);
+                        books.get(selection).setStatus("Checked Out");
+                    }
+
+                    // for (i = 0; i == selection; i++){
+                    // String status = "Checked Out";
+                    // books.set(selection, books.get(selection).setStatus(status));
+                    //}
+
+                    for (i = 0; i < books.size(); i++) {
+                        System.out.println(books.get(i));
+                    }
+
                     break;
                 case 2:
                     System.out.println("Search");
                     break;
                 case 3:
-                    for (int i = 0; i < books.size(); i++) {
+                    for (i = 0; i < books.size(); i++) {
                         System.out.println(books.get(i));
                     }
                     System.out.println("\n");
@@ -145,10 +119,6 @@ public class BookApp {
                     }
             }
         } while (reset == 1);
-
-        // Method call to get due date 14 days (2 weeks) from current date.
-        Book.dueDateMethod();
->>>>>>> 4a8beede2f445570d39a110e6853b70e4627c272
 
 //    private static void BookListing() {
 //        File myFile = new File("booklist.txt");
