@@ -19,7 +19,6 @@ public class BookApp {
         //String fileOuput = readfile();
 
         ArrayList<Book> books = new ArrayList<Book>();
-
         //add books to ArrayList
 
 
