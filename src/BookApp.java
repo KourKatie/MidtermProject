@@ -23,6 +23,7 @@ public class BookApp {
         //add books to ArrayList
 
 
+
         books.add(new Book(101, "The Alchemist", "Paulo Coelho", 208,
                 "November 23, 2010", "On-Shelf", 0));
         books.add(new Book(102, "Richest Man in Babylon", "George Samuel Clayson", 144,
@@ -51,8 +52,10 @@ public class BookApp {
                 "November 1992", "On-Shelf", 0));
 
         int choice = 0;
+        int reset = 0;
 
         System.out.println("Welcome to Stanton Island's Public Library!");
+<<<<<<< HEAD
         System.out.println("Main Menu");
         System.out.println("1 - Library Directory");
         System.out.println("2 - Search");
@@ -104,6 +107,48 @@ public class BookApp {
                 break;
         }
 
+=======
+
+        do {
+            System.out.println("Main Menu");
+            System.out.println("1 - Library Directory");
+            System.out.println("2 - Search");
+            System.out.println("3 - Return Book");
+            System.out.print("Enter menu number: ");
+            choice = scnr.nextInt();
+            scnr.nextLine();
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Library Directory");
+                    break;
+                case 2:
+                    System.out.println("Search");
+                    break;
+                case 3:
+                    for (int i = 0; i < books.size(); i++) {
+                        System.out.println(books.get(i));
+                    }
+                    System.out.println("\n");
+                    System.out.print("Select book to return by ID: ");
+                    int returnID = scnr.nextInt();
+
+                    //Change status of book to Checked In, Change due date back to 0
+
+                    System.out.println("Your book has been returned. Thank you!\n");
+                    System.out.println("1 - Main Menu");
+                    System.out.println("2 - Exit");
+                    reset = scnr.nextInt();
+                    if (reset == 1) {
+                    } else {
+                        break;
+                    }
+            }
+        } while (reset == 1);
+
+        // Method call to get due date 14 days (2 weeks) from current date.
+        Book.dueDateMethod();
+>>>>>>> 4a8beede2f445570d39a110e6853b70e4627c272
 
 //    private static void BookListing() {
 //        File myFile = new File("booklist.txt");
@@ -141,6 +186,7 @@ public class BookApp {
 //        }
 //
 //        return FIXME;
+
     }
 }
 
