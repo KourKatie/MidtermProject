@@ -23,19 +23,32 @@ public class BookApp {
         ArrayList<Book> books = new ArrayList<Book>();
 
         //add books to ArrayList
-        books.add(new Book("The Alchemist", "Paulo Coelho"));
-        books.add(new Book ("Richest Man in Babylon", "George Samuel Clayson"));
-        books.add(new Book ("48 Laws of Power", "Robert Greene"));
-        books.add(new Book("The Art of War", "Sun Tsu"));
-        books.add(new Book("Harry Potter and the Sorcerer's Stone", "J.K. Rowling"));
-        books.add(new Book("Hunger Games", "Suzanne Collins"));
-        books.add(new Book("Awakening Your Inner Genius", "Sean Patrick"));
-        books.add(new Book("Of Mice of Men", "John Steinbeck"));
-        books.add(new Book("The Great Gatsby", "F. Scott Fitzgerald"));
-        books.add(new Book("A Clockwork Orange", "Anthony Burgess"));
-        books.add(new Book("Invisible Man", "Ralph Ellison"));
-        books.add(new Book("Frankenstein", "Mary Shelley"));
-        books.add(new Book("The AutoBiography of Malcolm X", "Alvin Hailey"));
+        books.add(new Book(1,"The Alchemist", "Paulo Coelho", 208,
+                "November 23, 2010", "On-Shelf", 0));
+        books.add(new Book (2, "Richest Man in Babylon", "George Samuel Clayson", 144,
+                "January 1, 2002", "On-Shelf", 0));
+        books.add(new Book (3, "48 Laws of Power", "Robert Greene", 452,
+                "September 1, 2000","On-Shelf", 0));
+        books.add(new Book(4, "The Art of War", "Sun Tsu", 452,
+                "November 7, 2007", "On-Shelf", 0));
+        books.add(new Book(5, "Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 309,
+                "September 1998", "On-Shelf", 0));
+        books.add(new Book(6, "Hunger Games", "Suzanne Collins", 384,
+                "July 3, 2010", "On-Shelf", 0));
+        books.add(new Book(7, "Awakening Your Inner Genius", "Sean Patrick", 214,
+                "February 12, 2013", "On-Shelf", 0));
+        books.add(new Book(8, "Of Mice of Men", "John Steinbeck", 112,
+                "September 1, 1993", "On-Shelf", 0));
+        books.add(new Book(9, "The Great Gatsby", "F. Scott Fitzgerald", 180,
+                "September 30, 2004", "On-Shelf", 0));
+        books.add(new Book(10, "A Clockwork Orange", "Anthony Burgess", 213,
+                "April 7, 1995", "On-Shelf", 0));
+        books.add(new Book(11, "Invisible Man", "Ralph Ellison", 581,
+                "March 14, 1995", "On-Shelf", 0));
+        books.add(new Book(12, "Frankenstein", "Mary Shelley", 166,
+                "1994", "On-Shelf", 0));
+        books.add(new Book(13, "The AutoBiography of Malcolm X", "Alvin Hailey", 460,
+                "November 1992", "On-Shelf", 0));
 
         // Method call to get due date 14 days (2 weeks) from current date.
         Book.dueDateMethod();
