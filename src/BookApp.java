@@ -22,7 +22,7 @@ public class BookApp {
         ArrayList<Book> books = new ArrayList<Book>();
 
         //add books to ArrayList
-        books.add(new Book("The Alechemist", "Paulo Coelho"));
+        books.add(new Book("The Alchemist", "Paulo Coelho"));
         books.add(new Book ("Richest Man in Babylon", "George Samuel Clayson"));
         books.add(new Book ("48 Laws of Power", "Robert Greene"));
         books.add(new Book("The Art of War", "Sun Tsu"));
@@ -75,7 +75,7 @@ public class BookApp {
         return FIXME;
     }
 }
-}
+
 
 
 
