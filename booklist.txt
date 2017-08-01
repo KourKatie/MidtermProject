@@ -1,6 +1,6 @@
 101	The Alchemist	Paulo Coelho	208	23-Nov-10	On-shelf	0
 102	Richest Man in Babylon	George Samuel Clayson	144	1-Jan-02	On-shelf	0
-103	48 Laws of Power	Robert Greene	452	1-Sep-00	On-shelf	0
+103	Richest Man in Babylon	George Samuel Clayson	144	1-Jan-02	On-shelf	0
 104	The Art of War	Sun Tsu	452	7-Nov-07	On-shelf	0
 105	Harry Potter and the Sorcerer's Stone	J.K. Rowling	309	Sep-98	On-shelf	0
 106	Hunger Games	Suzanne Collins	384	3-Jul-10	On-shelf	0
