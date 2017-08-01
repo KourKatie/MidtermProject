@@ -13,6 +13,7 @@ public class BookApp {
 
     public static void main(String[] args) {
 
+
         Scanner scnr = new Scanner(System.in);
 
         File myFile = new File("booklist.txt");
@@ -36,6 +37,8 @@ public class BookApp {
         books.add(new Book("Frankenstein", "Mary Shelley"));
         books.add(new Book("The AutoBiography of Malcolm X", "Alvin Hailey"));
 
+        // Method call to get due date 14 days (2 weeks) from current date.
+        CheckedBook.dueDateMethod();
 
 //    private static void BookListing() {
 //        File myFile = new File("booklist.txt");
@@ -75,7 +78,7 @@ public class BookApp {
         return FIXME;
     }
 }
-}
+
 
 
 
