@@ -1,0 +1,13 @@
+101	The Alchemist	Paulo Coelho	208	23-Nov-10	On-shelf	0
+102	Richest Man in Babylon	George Samuel Clayson	144	1-Jan-02	On-shelf	0
+103	Richest Man in Babylon	George Samuel Clayson	144	1-Jan-02	On-shelf	0
+104	The Art of War	Sun Tsu	452	7-Nov-07	On-shelf	0
+105	Harry Potter and the Sorcerer's Stone	J.K. Rowling	309	Sep-98	On-shelf	0
+106	Hunger Games	Suzanne Collins	384	3-Jul-10	On-shelf	0
+107	Awakening Your Inner Genius	Sean Patrick	214	12-Feb-13	On-shelf	0
+108	Of Mice and Men	John Steinbeck	112	1-Sep-93	On-shelf	0
+109	The Great Gatsby	F. Scott Fitzgerald	180	30-Sep-04	On-shelf	0
+110	A Clockwork Orange	Anthony Burgess	213	7-Apr-95	On-shelf	0
+111	Invisible Man	Ralph Ellison	581	14-Mar-95	On-shelf	0
+112	Frankenstein	Mary Shelley	166	16-Jun-05	On-shelf	0
+113	The AutoBiography of Malcolm X	Alvin Hailey	460	Nov-92	On-shelf	0
