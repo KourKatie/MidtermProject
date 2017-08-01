@@ -11,10 +11,22 @@ public class Book {
     private int numberOfPages;
     private String publicationDate;
     private String status;
-    private Date dueDate;
+    private int dueDate;
 
+    // Default constructor
+    public Book() {
+        this.bookID = 0;
+        this.title = "";
+        this.author = "";
+        this.numberOfPages = 0;
+        this.publicationDate = "";
+        this.status = "";
+        this.dueDate = 0;
+    }
+
+    // All arguments constructor
     public Book(int bookID, String title, String author, int numberOfPages,
-                String publicationDate, String status, Date dueDate) {
+                String publicationDate, String status, int dueDate) {
         this.bookID = bookID;
         this.title = title;
         this.author = author;
@@ -72,17 +84,18 @@ public class Book {
         this.status = status;
     }
 
-    public Date getDueDate() {
+    public int getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(Date dueDate) {
+    public void setDueDate(int dueDate) {
         this.dueDate = dueDate;
     }
 
     @Override
-    public String toString() {
-        return bookID +  title + author + numberOfPages + publicationDate + status + dueDate;
+        public String toString() {
+            return bookID + " " + " " + title + " " + author + " " + numberOfPages
+                    + " " + publicationDate + " " + status + " " + dueDate;
     }
     // Method to get due date 14 days (2 weeks) from current date.
     public static void dueDateMethod() {
