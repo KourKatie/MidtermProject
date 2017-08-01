@@ -36,6 +36,10 @@ public class CheckedBook extends Book {
     public static void dueDateMethod() {
         Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
+        // Set seconds, minutes and hours to zero so the time will be a constant
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.HOUR, 0);
         cal.add(Calendar.DAY_OF_WEEK, 14);
         System.out.println((cal.getTime()));
     }
