@@ -21,7 +21,6 @@ public class BookApp {
         //String fileOuput = readfile();
 
         ArrayList<Book> books = new ArrayList<Book>();
-
         //add books to ArrayList
         books.add(new Book(101, "The Alchemist", "Paulo Coelho", 208,
                 "November 23, 2010", "On-Shelf", 0));
