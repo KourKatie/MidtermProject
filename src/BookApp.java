@@ -9,7 +9,7 @@ import java.io.File;
 
 public class BookApp {
 
-    public static String main(String[] args) {
+    public static void main(String[] args) {
 
 
         Scanner scnr = new Scanner(System.in);
@@ -50,12 +50,22 @@ public class BookApp {
         books.add(new Book(113, "The AutoBiography of Malcolm X", "Alvin Hailey", 460,
                 "November 1992", "On-Shelf", 0));
 
-        for (int i = 0; i < books.size(); i++) {
-            System.out.println(books.get(i));
-        }
+//        for (int i = 0; i < books.size(); i++) {
+//            System.out.println(books.get(i));
+//        }
 
 
         int choice = 0;
+
+        System.out.println("Welcome to Stanton Island's Public Library!");
+        System.out.println("Main Menu");
+        System.out.println("1 - Library Directory");
+        System.out.println("2 - Search");
+        System.out.println("3 - Return Book");
+        System.out.print("Enter menu number: ");
+        choice = scnr.nextInt();
+        scnr.nextLine();
+
         switch (choice) {
             case 1:
                 System.out.println("Library Directory");
@@ -70,6 +80,7 @@ public class BookApp {
 
         // Method call to get due date 14 days (2 weeks) from current date.
         Book.dueDateMethod();
+
 
 //    private static void BookListing() {
 //        File myFile = new File("booklist.txt");
@@ -108,6 +119,7 @@ public class BookApp {
 //
 //        return FIXME;
 //    }
+
     }
 }
 
