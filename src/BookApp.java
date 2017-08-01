@@ -6,12 +6,10 @@ import java.io.*;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileNotFoundException;
 
 public class BookApp {
 
-    public static void main(String[] args) {
+    public static String main(String[] args) {
 
 
         Scanner scnr = new Scanner(System.in);
@@ -37,7 +35,25 @@ public class BookApp {
         books.add(new Book("Frankenstein", "Mary Shelley"));
         books.add(new Book("The AutoBiography of Malcolm X", "Alvin Hailey"));
 
-        // Method call to get due date 14 days (2 weeks) from current date.
+
+ //   public String Book() {
+        int choice = 0;
+        switch(choice) {
+            case 1:
+                System.out.println("Library Directory");
+                break;
+            case 2:
+                System.out.println("Search");
+                break;
+            case 3:
+                System.out.println("Return Book");
+                break;
+        }
+
+
+
+
+    // Method call to get due date 14 days (2 weeks) from current date.
         CheckedBook.dueDateMethod();
 
 //    private static void BookListing() {
