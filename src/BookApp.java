@@ -2,6 +2,8 @@
  * Created by Katie on 7/31/2017.
  */
 
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.File;
@@ -56,6 +58,7 @@ public class BookApp {
 
         int choice = 0;
 
+
         System.out.println("Welcome to Stanton Island's Public Library!");
         System.out.println("Main Menu");
         System.out.println("1 - Library Directory");
@@ -70,8 +73,79 @@ public class BookApp {
                 System.out.println("Library Directory");
                 break;
             case 2:
-                System.out.println("Search");
+
+                System.out.println("Search ");
+                Scanner scan = new Scanner(System.in);
+
+                System.out.println("Will you be searching by Author or Title Keyword?");
+                String  userS = scnr.nextLine();
+
+                if (userS.contains("Author")){
+                    System.out.println("Enter an Author");
+
+                    String selAuthor = scnr.nextLine();
+
+                    for(int i = 0; i < books.size(); i++) {
+
+                        if (books.get(i).getAuthor() .contains(selAuthor)){
+                            System.out.println(books.get(i));
+                        }
+                        System.out.println("\nPlease enter the book ID if you would like to check it out ");
+                        int selection = scnr.nextInt();
+                        selection = selection - 101;
+
+                        System.out.println("Congratulations you just checked out " + "'" + bookList.get(selection).getTitle()
+                                + "'" + "," + " it is due " + Book.dueDateMethod() + ".");
+
+                        for (i = 0; i < bookList.size(); i++) {
+                            Date dueDate = Book.dueDateMethod();
+                            bookList.set(selection, bookList.get(selection)).setDueDate(dueDate);
+                            bookList.get(selection).setStatus("Checked Out");
+                        }
+                        for (i = 0; i < bookList.size(); i++) {
+                            System.out.println(bookList.get(i));
+                        }
+                    }
+
+                }
+
+                else {
+                    System.out.println("Enter a keyword in the of the desired Title");
+
+                    String selKeyword = scnr.nextLine();
+
+                    for(int i = 0; i < books.size(); i++) {
+
+                        if (books.get(i).getAuthor() .contains(selKeyword)){
+                            System.out.println(books.get(i));
+                        }
+                        System.out.println("\nPlease enter the book Id if you would like to check it out ");
+                        int selection = scnr.nextInt();
+                        selection = selection - 101;
+
+                        System.out.println("Congratulations you just checked out " + "'" + bookList.get(selection).getTitle()
+                                + "'" + "," + " it is due " + Book.dueDateMethod() + ".");
+
+                        for (i = 0; i < bookList.size(); i++) {
+                            Date dueDate = Book.dueDateMethod();
+                            bookList.set(selection, bookList.get(selection)).setDueDate(dueDate);
+                            bookList.get(selection).setStatus("Checked Out");
+                        }
+                        for (i = 0; i < bookList.size(); i++) {
+                            System.out.println(bookList.get(i));
+                        }
+                    }
+
+                }
+
+            System.out.println("1 - Main Menu");
+            System.out.println("2 - Exit");
+            reset = scnr.nextInt();
+            if (reset == 1) {
+            } else {
                 break;
+            }
+
             case 3:
                 System.out.println("Return Book");
                 break;
