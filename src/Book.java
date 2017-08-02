@@ -1,4 +1,4 @@
-import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -12,7 +12,7 @@ public class Book {
     private int numberOfPages;
     private String publicationDate;
     private String status;
-    private Date dueDate;
+    private String dueDate;
 
     // Default constructor
     public Book() {
@@ -22,7 +22,7 @@ public class Book {
         this.numberOfPages = 0;
         this.publicationDate = "";
         this.status = "";
-        this.dueDate = null;
+        this.dueDate = "";
     }
 
     // All arguments constructor
@@ -36,7 +36,7 @@ public class Book {
         this.numberOfPages = numberOfPages;
         this.publicationDate = publicationDate;
         this.status = status;
-        this.dueDate = null;
+        this.dueDate = "";
     }
 
     public int getBookID() {
@@ -87,11 +87,11 @@ public class Book {
         this.status = status;
     }
 
-    public Date getDueDate() {
+    public String getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(Date dueDate) {
+    public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
 
@@ -100,18 +100,27 @@ public class Book {
             return bookID + " " + " " + title + " " + author + " " + numberOfPages
                     + " " + publicationDate + " " + status + " " + dueDate;
     }
-    // Method to get due date 14 days (2 weeks) from current date.
-    public static Date dueDateMethod() {
+
+    // Method to get due date 14 days (2 weeks) from current date.// Updated method so it will output only date without time.
+    public static String dueDateMethod() {
+        SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
         Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
-        // Set seconds, minutes and hours to zero so the time will be a constant
-        cal.set(Calendar.SECOND, 0);
-        cal.set(Calendar.MINUTE, 0);
-        cal.set(Calendar.HOUR, 0);
-        cal.add(Calendar.DAY_OF_WEEK, 14);
-       // System.out.println((cal.getTime()));
-        return cal.getTime();
-
+        cal.add(Calendar.DAY_OF_MONTH, 14);
+        return sdf.format(cal.getTime());
     }
+    // Method to get due date 14 days (2 weeks) from current date.
+//    public static Date dueDateMethod() {
+//        Calendar cal = Calendar.getInstance();
+//        cal.setTime(new Date());
+//        // Set seconds, minutes and hours to zero so the time will be a constant
+//        cal.set(Calendar.SECOND, 0);
+//        cal.set(Calendar.MINUTE, 0);
+//        cal.set(Calendar.HOUR, 0);
+//        cal.add(Calendar.DAY_OF_WEEK, 14);
+//       // System.out.println((cal.getTime()));
+//        return cal.getTime();
+//
+//    }
 }
 
