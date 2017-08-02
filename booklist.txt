@@ -1,13 +1,13 @@
-101	The Alchemist	Paulo Coelho	208	11/23/2010	On-shelf	0
-102	Richest Man in Babylon	George Samuel Clayson	144	01/01/2002	On-shelf	0
-103	All the Light We Cannot See	Anthony Doerr	544	05/06/2014	On-shelf	0
-104	The Art of War	Sun Tsu	452	11/07/2007	On-shelf	0
-105	Harry Potter and the Sorcerer's Stone	J.K. Rowling	309	06/26/1997	On-shelf	0
-106	Hunger Games	Suzanne Collins	384	07/03/2007	On-shelf	0
-107	Awakening Your Inner Genius	Sean Patrick	214	02/12/2013	On-shelf	0
-108	Of Mice and Men	John Steinbeck	112	11/01/1993	On-shelf	0
-109	The Great Gatsby	F. Scott Fitzgerald	180	11/30/2004	On-shelf	0
-110	A Clockwork Orange	Anthony Burgess	213	04/07/1995	On-shelf	0
-111	Invisible Man	Ralph Ellison	581	03/14/1995	On-shelf	0
-112	Frankenstein	Mary Shelley	166	06/16/2005	On-shelf	0
-113	The AutoBiography of Malcolm X	Alvin Hailey	460	11/1992	On-shelf	0
+101	The Alchemist	Paulo Coelho	208	23-Nov-10	On-shelf	void
+102	Richest Man in Babylon	George Samuel Clayson	144	1-Jan-02	On-shelf	void
+103	All the Light We Cannot See	Anthony Doerr	544	6-May-14	On-shelf	void
+104	The Art of War	Sun Tsu	452	7-Nov-07	On-shelf	void
+105	Harry Potter and the Sorcerer's Stone	J.K. Rowling	309	Sep-98	On-shelf	void
+106	Hunger Games	Suzanne Collins	384	3-Jul-10	On-shelf	void
+107	Awakening Your Inner Genius	Sean Patrick	214	12-Feb-13	On-shelf	void
+108	Of Mice and Men	John Steinbeck	112	1-Sep-93	On-shelf	void
+109	The Great Gatsby	F. Scott Fitzgerald	180	30-Sep-04	On-shelf	void
+110	A Clockwork Orange	Anthony Burgess	213	7-Apr-95	On-shelf	void
+111	Invisible Man	Ralph Ellison	581	14-Mar-95	On-shelf	void
+112	Frankenstein	Mary Shelley	166	16-Jun-05	On-shelf	void
+113	The AutoBiography of Malcolm X	Alvin Hailey	460	Nov-92	On-shelf	void

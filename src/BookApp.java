@@ -1,11 +1,8 @@
 /**
  * Created by Katie on 7/31/2017.
  */
+import java.io.*;
 import java.util.Scanner;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -26,7 +23,9 @@ public class BookApp {
 
         Scanner scnr = new Scanner(System.in);
 
-        System.out.println("Welcome to Stanton Island's Public Library!");
+        System.out.println("The year is 2017 GW. After global warming and 30 years of world wars, all\n" +
+                "the libraries in the world have been destroyed excpet this one located in \n" +
+                "Detroit, Michigan. " + "Welcome to the World's Last Library!\n");
 
         do {
             reset = 0;
@@ -37,9 +36,9 @@ public class BookApp {
             System.out.println("3 - Return Book");
             System.out.print("Enter menu number: ");
             choice = scnr.nextInt();
+
             scnr.nextLine();
 
-            //int i;
             switch (choice) {
                 case 1:
                     int i = 0;
@@ -66,6 +65,7 @@ public class BookApp {
                         bookList.set(selection, bookList.get(selection)).setDueDate(dueDate);
                         bookList.get(selection).setStatus("Checked Out");
                     }
+                    writeToFile(bookList);
 
                     System.out.println("1 - Main Menu");
                     System.out.println("2 - Exit");
@@ -77,8 +77,6 @@ public class BookApp {
                         break;
                     }
                 case 2:
-                    //System.out.println("Search ");
-                    //Scanner scan = new Scanner(System.in);
 
                     System.out.println("Will you be searching by Author or Title Keyword?");
                     String userS = scnr.nextLine();
@@ -87,13 +85,6 @@ public class BookApp {
                         System.out.println("Enter an Author");
 
                         String selAuthor = scnr.nextLine();
-                        //System.out.println(selAuthor);
-//                        for (i = 0; i < bookList.size(); i++) {
-//
-//                            if (bookList.get(i).getAuthor().contains(selAuthor)) {
-//                                System.out.println(bookList.get(i));
-//                            }
-//                        }
 
                         for (i = 0; i < bookList.size(); i++) {
 
@@ -114,72 +105,35 @@ public class BookApp {
                             bookList.set(selections, bookList.get(selections)).setDueDate(dueDate);
                             bookList.get(selections).setStatus("Checked Out");
                         }
-//                        for (i = 0; i < bookList.size(); i++) {
-//                            System.out.println(bookList.get(i));
-//                        }
 
-            } else{
-                System.out.println("Enter a keyword in the of the desired Title");
+                    } else {
+                        System.out.println("Enter a keyword in the of the desired Title");
 
-                String selKeyword = scnr.nextLine();
+                        String selKeyword = scnr.nextLine();
 
-                for (i = 0; i < bookList.size(); i++) {
+                        for (i = 0; i < bookList.size(); i++) {
 
-                    if (bookList.get(i).getAuthor().contains(selKeyword)) {
-                        System.out.println(bookList.get(i));
+                            if (bookList.get(i).getAuthor().contains(selKeyword)) {
+                                System.out.println(bookList.get(i));
+                            }
+                        }
+                        System.out.println("\nPlease enter the book Id if you would like to check it out ");
+                        selections = scnr.nextInt();
+                        selections = selections - 101;
+
+                        System.out.println("Congratulations you just checked out " + "'" + bookList.get(selections).getTitle()
+                                + "'" + "," + " it is due " + Book.dueDateMethod() + ".");
+
+                        for (i = 0; i < bookList.size(); i++) {
+                            String dueDate = Book.dueDateMethod();
+                            bookList.set(selections, bookList.get(selections)).setDueDate(dueDate);
+                            bookList.get(selections).setStatus("Checked Out");
+                        }
+                        for (i = 0; i < bookList.size(); i++) {
+                            System.out.println(bookList.get(i));
+                        }
                     }
-                }
-                    System.out.println("\nPlease enter the book Id if you would like to check it out ");
-                    selections = scnr.nextInt();
-                    selections = selections - 101;
-
-                    System.out.println("Congratulations you just checked out " + "'" + bookList.get(selections).getTitle()
-                            + "'" + "," + " it is due " + Book.dueDateMethod() + ".");
-
-                    for (i = 0; i < bookList.size(); i++) {
-                        String dueDate = Book.dueDateMethod();
-                        bookList.set(selections, bookList.get(selections)).setDueDate(dueDate);
-                        bookList.get(selections).setStatus("Checked Out");
-                    }
-                    for (i = 0; i < bookList.size(); i++) {
-                        System.out.println(bookList.get(i));
-                    }
-            }
-
-            System.out.println("1 - Main Menu");
-            System.out.println("2 - Exit");
-            reset = scnr.nextInt();
-            scnr.nextLine();
-            if (reset == 1) {
-                break;
-            } else {
-                break;
-            }
-
-            case 3:
-                for (i = 0; i < bookList.size(); i++) {
-                    //System.out.println(bookList.get(i));
-
-                    for (i = 0; i < bookList.size(); i++) {
-                        System.out.printf("%-8d%-45s%-25s%-8d%-25s%-20s%-20s", bookList.get(i).getBookID(),
-                                bookList.get(i).getTitle(), bookList.get(i).getAuthor(),
-                                bookList.get(i).getNumberOfPages(), bookList.get(i).getPublicationDate(),
-                                bookList.get(i).getStatus(), bookList.get(i).getDueDate() + "\n");
-
-                    }
-
-                    System.out.println("\n");
-                    System.out.print("Select book to return by ID: ");
-                    int returnID = scnr.nextInt();
-                    returnID = returnID - 101;
-
-                    //Change status of book to Checked In, Change due date back to 0
-                    for (i = 0; i < bookList.size(); i++) {
-                        //String dueDate = Book.dueDateMethod();
-                        bookList.get(returnID).setDueDate("");//bookList.set(returnID, bookList.get(returnID)).setDueDate(dueDate);
-                        bookList.get(returnID).setStatus("On-shelf");
-                    }
-                    System.out.println("Your book has been returned. Thank you!\n");
+                    writeToFile(bookList);
 
                     System.out.println("1 - Main Menu");
                     System.out.println("2 - Exit");
@@ -190,9 +144,43 @@ public class BookApp {
                     } else {
                         break;
                     }
-                }
-        }
-            } while (reset == 1) ;
+
+                case 3:
+
+                    for (i = 0; i < bookList.size(); i++) {
+                        System.out.printf("%-8d%-45s%-25s%-8d%-25s%-20s%-20s", bookList.get(i).getBookID(),
+                                bookList.get(i).getTitle(), bookList.get(i).getAuthor(),
+                                bookList.get(i).getNumberOfPages(), bookList.get(i).getPublicationDate(),
+                                bookList.get(i).getStatus(), bookList.get(i).getDueDate() + "\n");
+                    }
+
+                    System.out.println("\n");
+                    System.out.print("Select book to return by ID: ");
+                    int returnID = scnr.nextInt();
+                    returnID = returnID - 101;
+
+                    for (i = 0; i < bookList.size(); i++) {
+                        //String dueDate = Book.dueDateMethod();
+                        bookList.get(returnID).setDueDate("");//bookList.set(returnID, bookList.get(returnID)).setDueDate(dueDate);
+                        bookList.get(returnID).setStatus("On-shelf");
+                    }
+                    System.out.println("Your book has been returned. Thank you!\n");
+
+                    writeToFile(bookList);
+
+                    System.out.println("1 - Main Menu");
+                    System.out.println("2 - Exit");
+                    reset = scnr.nextInt();
+                    scnr.nextLine();
+                    if (reset == 1) {
+                        break;
+                    } else {
+                        break;
+                    }
+
+            }
+
+        } while (reset == 1);
 
 
     }
@@ -234,7 +222,7 @@ public class BookApp {
                 //take the sixth item and put into book's status
                 String status = details[5];
                 //take the seventh item, turn it into an int, put into book's dueDate
-                int dueDate = Integer.parseInt(details[6]);
+                String dueDate = details[6];
 
                 //construct a new Car object from this data
                 Book b = new Book(bookID, title, author, numberOfPages, publicationDate, status, dueDate);
@@ -249,12 +237,41 @@ public class BookApp {
 
         } catch (IOException e) {
             System.out.println(e);
-           // return null;
+            // return null;
         }
 
         //in.close();
 
         return books;
+    }
+
+    private static void writeToFile(ArrayList<Book> bookList) {
+        File myFile = new File("booklist.txt");
+        Scanner scan1 = new Scanner(System.in);
+        PrintWriter p;
+        try {
+            //open te file for writing
+            p = new PrintWriter(new FileOutputStream(myFile, false));
+            //loop through the booklist
+            for (Book b : bookList) {
+
+                //build the line for the file
+                if (b.getDueDate() == "") {
+                    b.setDueDate("void");
+                }
+                String s = b.getBookID() + "\t" + b.getTitle() + "\t" + b.getAuthor() + "\t" + b.getNumberOfPages() + "\t" + b.getPublicationDate()
+                        + "\t" + b.getStatus() + "\t" + b.getDueDate();
+                //write that line to te file
+                p.println(s);
+                //    bookList.get(returnID).setStatus("Checked out");
+            }
+            //close the file
+            p.close();
+
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
 
