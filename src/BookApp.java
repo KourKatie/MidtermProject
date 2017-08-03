@@ -42,12 +42,12 @@ public class BookApp {
             switch (choice) {
                 case 1:
                     int i = 0;
-                    System.out.printf("%80s \n","Library Directory");
-                    System.out.printf("%83s \n","======================");
+                    System.out.printf("%80s \n", "Library Directory");
+                    System.out.printf("%83s \n", "======================");
 
                     System.out.printf("%-8s %-45s %-25s %-8s %-25s %-20s %-20s \n", "BookID", "Title", "Author",
                             "Pages", "Publication Date", "Status", "Due Date");
-                    System.out.printf("%s \n","-----------------------------------------------------" +
+                    System.out.printf("%s \n", "-----------------------------------------------------" +
                             "-------------------------------------------------------------------------------------" +
                             "------------");
                     for (i = 0; i < bookList.size(); i++) {
@@ -65,8 +65,7 @@ public class BookApp {
                     // Added if to make sure user enters correct bookID
                     if (selection < 0 || selection > 12) {
                         System.out.println("Invalid BookID selected, taking you back to the main menu.");
-                    }
-                    else {
+                    } else {
                         System.out.println("Congratulations you just checked out " + "'" + bookList.get(selection).getTitle()
                                 + "'" + "," + " it is due " + Book.dueDateMethod() + ".");
 
@@ -77,17 +76,17 @@ public class BookApp {
                         }
                     }
 
-                        writeToFile(bookList);
+                    writeToFile(bookList);
 
-                        System.out.println("1 - Main Menu");
-                        System.out.println("2 - Exit");
-                        reset = scnr.nextInt();
-                        scnr.nextLine();
-                        if (reset == 1) {
-                            break;
-                        } else {
-                            break;
-                        }
+                    System.out.println("1 - Main Menu");
+                    System.out.println("2 - Exit");
+                    reset = scnr.nextInt();
+                    scnr.nextLine();
+                    if (reset == 1) {
+                        break;
+                    } else {
+                        break;
+                    }
                 case 2:
 
                     System.out.println("Will you be searching by Author or Title Keyword?");
@@ -103,11 +102,11 @@ public class BookApp {
 
                             if (bookList.get(i).getAuthor().contains(selAuthor)) {
                                 //System.out.println(bookList.get(i));
-                                System.out.printf("%82s \n","Search Result");
-                                System.out.printf("%85s \n","=====================");
+                                System.out.printf("%82s \n", "Search Result");
+                                System.out.printf("%85s \n", "=====================");
                                 System.out.printf("%-8s %-45s %-25s %-8s %-25s %-20s %-20s \n", "BookID", "Title", "Author",
                                         "Pages", "Publication Date", "Status", "Due Date");
-                                System.out.printf("%s \n","-----------------------------------------------------" +
+                                System.out.printf("%s \n", "-----------------------------------------------------" +
                                         "-------------------------------------------------------------------------------------" +
                                         "------------");
                                 System.out.printf("%-8d %-45s %-25s %-8d %-25s %-20s %-20s \n", bookList.get(i).getBookID(),
@@ -139,11 +138,11 @@ public class BookApp {
 
                             if (bookList.get(i).getTitle().contains(selKeyword)) {
                                 //System.out.println(bookList.get(i));
-                                System.out.printf("%82s \n","Search Result");
-                                System.out.printf("%85s \n","=====================");
+                                System.out.printf("%82s \n", "Search Result");
+                                System.out.printf("%85s \n", "=====================");
                                 System.out.printf("%-8s %-45s %-25s %-8s %-25s %-20s %-20s \n", "BookID", "Title", "Author",
                                         "Pages", "Publication Date", "Status", "Due Date");
-                                System.out.printf("%s \n","-----------------------------------------------------" +
+                                System.out.printf("%s \n", "-----------------------------------------------------" +
                                         "-------------------------------------------------------------------------------------" +
                                         "------------");
                                 System.out.printf("%-8d %-45s %-25s %-8d %-25s %-20s %-20s \n", bookList.get(i).getBookID(),
@@ -158,6 +157,7 @@ public class BookApp {
                                 System.out.println("Congratulations you just checked out " + "'" + bookList.get(selections).getTitle()
                                         + "'" + "," + " it is due " + Book.dueDateMethod() + ".");
 
+
                                 for (i = 0; i < bookList.size(); i++) {
                                     String dueDate = Book.dueDateMethod();
                                     bookList.set(selections, bookList.get(selections)).setDueDate(dueDate);
@@ -165,9 +165,6 @@ public class BookApp {
                                 }
                             }
                         }
-//                        for (i = 0; i < bookList.size(); i++) {
-//                            System.out.println(bookList.get(i));
-//                        }
                     }
                     writeToFile(bookList);
 
@@ -185,7 +182,7 @@ public class BookApp {
 
                     System.out.printf("%-8s %-45s %-25s %-8s %-25s %-20s %-20s \n", "BookID", "Title", "Author",
                             "Pages", "Publication Date", "Status", "Due Date");
-                    System.out.printf("%s \n","-----------------------------------------------------" +
+                    System.out.printf("%s \n", "-----------------------------------------------------" +
                             "-------------------------------------------------------------------------------------" +
                             "------------");
                     for (i = 0; i < bookList.size(); i++) {
@@ -225,6 +222,7 @@ public class BookApp {
             }
 
         } while (reset == 1);
+
     }
 
     public static ArrayList<Book> readFile(String filename) {
