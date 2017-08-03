@@ -29,7 +29,7 @@ public class Book {
 
 
     public Book(int bookID, String title, String author, int numberOfPages,
-                String publicationDate, String status, int dueDate) {
+                String publicationDate, String status, String dueDate) {
         this.bookID = bookID;
         this.title = title;
         this.author = author;
@@ -96,8 +96,8 @@ public class Book {
     }
 
     @Override
-        public String toString() {
-            return bookID + " " + " " + title + " " + author + " " + numberOfPages
+       public String toString() {
+        return bookID + " " + " " + title + " " + author + " " + numberOfPages
                     + " " + publicationDate + " " + status + " " + dueDate;
     }
 
